@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public Vector2 boxSize;
     public float castDistance;
     public LayerMask groundLayer;
+    public Text WINTEXT;
     
     bool grounded;
     // Start is called before the first frame update
@@ -52,4 +54,14 @@ public class playerMovement : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Win")
+        {
+            WINTEXT.gameObject.SetActive(true);
+        }
+    }
+
+
 }
