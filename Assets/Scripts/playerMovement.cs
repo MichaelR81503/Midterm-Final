@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class playerMovement : MonoBehaviour
     {
         if(collision.tag == "Win")
         {
-            WINTEXT.gameObject.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
