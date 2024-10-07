@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 2;                  //set max health to two
+        maxHealth = 100;                  //set max health to two
         currentHealth = maxHealth;      //set current health to max health
     }
 
